@@ -3,8 +3,6 @@ package nbg.spring.smdb.domain;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -39,6 +37,7 @@ public class Person extends BaseEntity {
 
     @JsonManagedReference("categories")
     @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "Person_Category",
             joinColumns = @JoinColumn(name = "person_id"),
