@@ -31,6 +31,7 @@ public class Category extends BaseEntity {
 
     @JsonBackReference("categories")
     @ManyToMany(mappedBy = "categories")
-    Set<Person> persons;
+    private Set<Person> persons;
 
 }
+

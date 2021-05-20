@@ -43,6 +43,6 @@ public class Person extends BaseEntity {
     @JoinTable(name = "Person_Category",
             joinColumns = @JoinColumn(name = "person_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
-    Set<Category> categories;
+    private Set<Category> categories;
 
 }
